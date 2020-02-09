@@ -21,6 +21,7 @@ import { Camera } from "expo-camera";
 import * as FaceDetector from "expo-face-detector";
 import * as Permissions from "expo-permissions";
 import * as ImageManipulator from "expo-image-manipulator";
+import Auth from "./auth.js";
 
 import Clarifai from "clarifai";
 

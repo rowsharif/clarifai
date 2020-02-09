@@ -19,7 +19,7 @@ import { Camera } from "expo-camera";
 import * as Permissions from "expo-permissions";
 import * as ImageManipulator from "expo-image-manipulator";
 import Clarifai from "clarifai";
-import Auth from "../auth";
+import Auth from "../auth.js";
 
 const app = new Clarifai.App({
   apiKey: "e02c1b3436ca4a699442e0fdb7c77dda"
