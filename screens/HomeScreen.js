@@ -31,10 +31,10 @@ export default function HomeScreen() {
   useEffect(() => {}, []);
 
   const handleDeleteModel = async () => {
-    const response = await app.models.delete("faces");
-    console.log("models delete result", response);
-    const response2 = await app.inputs.delete();
-    console.log("inputs delete result", response2);
+    // const response = await app.models.delete("faces");
+    // console.log("models delete result", response);
+    // const response2 = await app.inputs.delete();
+    // console.log("inputs delete result", response2);
     //setAllowedIn(false);
     Auth.setAllowedIn(false);
   };

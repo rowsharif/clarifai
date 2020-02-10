@@ -42,19 +42,19 @@ const makeInput = async base64 => {
 };
 
 const makeModel = async () => {
-  const response = await app.models.create("faces", [{ id: "me" }]);
+  const response = await app.models.create("faces1", [{ id: "me" }]);
   console.log("model response", response);
   return response;
 };
 
 const trainModel = async () => {
-  const response = await app.models.train("faces");
+  const response = await app.models.train("faces1");
   console.log("train result", response);
   return response;
 };
 
 const predictModel = async base64 => {
-  const response = await app.models.predict({ id: "faces" }, { base64 });
+  const response = await app.models.predict({ id: "faces1" }, { base64 });
   console.log("predict result", response);
   return response;
 };
@@ -80,7 +80,7 @@ export default function App(props) {
 
   const findModel = async () => {
     try {
-      setFACES(await app.models.get("faces"));
+      setFACES(await app.models.get("faces1"));
     } catch (error) {
       setFACES(null);
       console.log("faces no model", error);
