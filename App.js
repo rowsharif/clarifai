@@ -9,6 +9,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  StatusBar,
   TouchableOpacity,
   View,
   CameraRoll
@@ -61,7 +62,7 @@ const predictModel = async base64 => {
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-  const [allowedIn, setAllowedIn] = useState(false);
+  const [allowedIn, setAllowedIn] = useState(true);
   Auth.init(setAllowedIn);
 
   const [hasCameraPermission, setHasCameraPermission] = useState(false);

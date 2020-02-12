@@ -8,6 +8,7 @@ import HomeScreen from "../screens/HomeScreen";
 import LinksScreen from "../screens/LinksScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import BarCodeScreen from "../screens/BarCodeScreen";
+import ARScreen from "../screens/ARScreen";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -36,6 +37,29 @@ HomeStack.navigationOptions = {
 };
 
 HomeStack.path = "";
+
+const ARStack = createStackNavigator(
+  {
+    AR: ARScreen
+  },
+  config
+);
+
+ARStack.navigationOptions = {
+  tabBarLabel: "AR",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === "ios"
+          ? `ios-information-circle${focused ? "" : "-outline"}`
+          : "md-information-circle"
+      }
+    />
+  )
+};
+
+ARStack.path = "";
 
 const BarCodeStack = createStackNavigator(
   {
@@ -98,7 +122,8 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   BarCodeStack,
-  SettingsStack
+  SettingsStack,
+  ARStack
 });
 
 tabNavigator.path = "";
